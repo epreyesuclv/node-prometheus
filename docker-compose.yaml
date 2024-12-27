@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  prometheus-node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9100:9100"
+    container_name: prometheus-node
+    restart: always
