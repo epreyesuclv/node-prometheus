@@ -5,13 +5,13 @@ FROM node:16
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY prometheus-node/package*.json ./
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the application code
-COPY prometheus-node/ .
+COPY . .
 
 # Expose the port your app runs on
 EXPOSE 9100
