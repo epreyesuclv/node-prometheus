@@ -30,7 +30,7 @@ register.registerMetric(totalMemoryGauge);
 setInterval(() => {
   const totalMemory = os.totalmem();
   const freeMemory = os.freemem();
-  const usedMemory = totalMemory - freeMemory;
+  const usedMemory = Number(((totalMemory - freeMemory) / Math.pow(1024, 2)).toFixed(0));
 
   memoryUsageGauge.set(usedMemory);
   totalMemoryGauge.set(totalMemory);
